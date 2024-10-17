@@ -1,0 +1,154 @@
+{
+  "main": {
+    "id": "10b0ae3176d57ff2",
+    "type": "split",
+    "children": [
+      {
+        "id": "58f08835db5ed849",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7af99638ed75c7b5",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7a0c2ff8fde622eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "18d5128c1f09dea3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f5c1f3d73420c06",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "41e8624252e721f6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8ef4b21d11e964dd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e537c0e3cf2191cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ceac47b11ec50a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9bd56624fb5cbc0d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ebe8e3d051b46b69",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "87ba492c58a51235",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "859296201f183339",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "7af99638ed75c7b5",
+  "lastOpenFiles": [
+    "socket/server.ts.md~",
+    "socket/main.md~",
+    "socket/main.md",
+    "socket/server.ts.md.md",
+    "socket/server.ts.md",
+    "socket/socket.io events.md",
+    "socket.io events.md",
+    "socket",
+    "Redux Setup.md",
+    "Welcome.md"
+  ]
+}
