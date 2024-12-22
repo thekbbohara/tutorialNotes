@@ -1,3 +1,4 @@
+# Mysql 101 for mongoose developer
 ## INTRODUCTION
 - I dont care.
 - Mysql is a relational database management systems (RDBMS). It is an open-source, multi-user, multi-threaded database system that allows for storing and managing structured data in tables. It uses the **Structured Query Language (SQL)** to manage and manipulate data.
