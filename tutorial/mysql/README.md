@@ -65,37 +65,37 @@
 ### DESCRIBE
 - Used in SQL to view the structure of a table (its columns, data types, constraints, etc.). **Mongoose Example**: In MongoDB, there isn’t a direct equivalent to `DESCRIBE`. However, you can inspect a schema programmatically.
 ```js
-	console.log(UserSchema.paths);
-	// Outputs details about the schema fields and types
+console.log(UserSchema.paths);
+// Outputs details about the schema fields and types
 ```
 
 ```sql
-	DESCRIBE Users;
+DESCRIBE Users;
 ```
 ### INSERT
 - The `INSERT INTO` command is used to insert new rows in a table. In mongoose you would insert a new document into a collection/(Model).
-	```js
+```js
 	// In mongoose its equivalent to .save() or .create();
 	const newUser = new User({ name: 'John Doe', email: 'john@example.com' });
 	newUser.save()
-	```
+```
 
-	```sql
+```sql
 	INSERT INTO Users (name, email)
 	VALUES ('John Doe', 'john@example.com');
-	```
+```
 
 ### SELECT
 - The `SELECT` statement in SQL is used to retrieve data from a database. In Mongoose, this is equivalent to using the `.find()` method to query a collection.
-	```js
+```js
 	const users = await User.find(); // Fetches all users
 	const { name, email } = await User.findById(1); // Fetches user with id = 1
-	```
+```
 
-	```sql
+```sql
 	SELECT * FROM Users; -- all users
 	SELECT name, email FROM Users WHERE id = 1; -- user of id 1
-	```
+```
 
 ### UPDATE
 - The `UPDATE` statement is used to modify the existing records in a table. In mongoose you use find and update or .update()
@@ -103,14 +103,14 @@
 	// update all user of name kb
 	const query = {name:"kb"};
 	USER.update(query,{name:"thekbbohara"})
-	```
+```
 
 ```sql
 	-- update all user of name kb
 	UPDATE Users
 	SET name="thekbbohara", email="thekbbohara@gmail.com"
 	WHERE name="kb";
-	```
+```
 
 ### DELETE
 - The `DELETE` statement is used to delete existing records in a table. In mongoose we'd use deleteOne, deleteMany or find and delete.
@@ -129,8 +129,7 @@
 ### ALTER
 - The `ALTER TABLE` statement in SQL is used to modify the structure of an existing table (add column, drop column and modify column).
   In Mongoose, the equivalent operation would be modifying the schema to include the new field and then handling updates to existing documents if necessary.
-
-  ```js
+```js
   // Update the UserSchema to add the 'age' field
   const UserSchema = new mongoose.Schema({
     name: String,
@@ -139,16 +138,15 @@
   });
 ```
 
-	```sql
+```sql
 	-- Adds an 'age' column to the Users table
 	ALTER TABLE Users ADD age INT;
-
+	
 	-- Delete 'Email' column from Users table
 	ALTER TABLE Users DROP COLUMN email;
-
+	
 	-- Makes 'id' column unsigned and auto-incrementing
 	ALTER TABLE Users MODIFY COLUMN id INT UNSIGNED AUTO_INCREMENT;
-
 ```
 
 ### JOIN
@@ -170,37 +168,37 @@
 - #### INNER JOIN
 	The `INNER JOIN` keyword selects records that have matching values in both tables.
 ```sql
-	-- SQL Example: INNER JOIN
-	SELECT Orders.order_id, Users.name
-	FROM Orders
-	INNER JOIN Users
-	ON Orders.user_id = Users.id;
+-- SQL Example: INNER JOIN
+SELECT Orders.order_id, Users.name
+FROM Orders
+INNER JOIN Users
+ON Orders.user_id = Users.id;
 ```
 - #### LEFT JOIN
 	The `LEFT JOIN` keyword returns all records from the left table (table1), and the matching records (if any) from the right table (table2).
 ```sql
-	-- SQL Example: INNER JOIN
-	SELECT Orders.order_id, Users.name
-	FROM Orders
-	LEFT JOIN Users
-	ON Orders.user_id = Users.id;
+-- SQL Example: INNER JOIN
+SELECT Orders.order_id, Users.name
+FROM Orders
+LEFT JOIN Users
+ON Orders.user_id = Users.id;
 ```
 - #### RIGHT JOIN
 	The `RIGHT JOIN` keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).
 ```sql
-	-- SQL Example: INNER JOIN
-	SELECT Orders.order_id, Users.name
-	FROM Orders
-	RIGHT JOIN Users
-	ON Orders.user_id = Users.id;
+-- SQL Example: INNER JOIN
+SELECT Orders.order_id, Users.name
+FROM Orders
+RIGHT JOIN Users
+ON Orders.user_id = Users.id;
 ```
 - #### CROSS JOIN
 	The `CROSS JOIN` keyword returns all records from both tables (table1 and table2).
 ```sql
-	-- SQL Example: CROSS JOIN
-	SELECT Orders.order_id, Users.name
-	FROM Orders
-	CROSS JOIN Users
+-- SQL Example: CROSS JOIN
+SELECT Orders.order_id, Users.name
+FROM Orders
+CROSS JOIN Users
 ```
 
 ## DATATYPES
@@ -258,34 +256,34 @@
 
 ## PRIMARY KEY
 - Ensures that each row in a table has a unique identifier.
-	```js
+```js
    const UserSchema = new mongoose.Schema({
      _id: { type: mongoose.Schema.Types.ObjectId, auto: true }, // Auto-generated unique ID (default primary key in MongoDB)
      name: { type: String, required: true }
    });
    const User = mongoose.model('User', UserSchema);
-   ```
+```
 
-   ```sql
+```sql
    CREATE TABLE Users (
      id INT AUTO_INCREMENT PRIMARY KEY,
      name VARCHAR(100) NOT NULL
    );
-   ```
+```
 ## FOREIGN KEY
 - Ensures a column's values correspond to values in another table.
-	```js
-   const PostSchema = new mongoose.Schema({
-     title: { type: String, required: true },
-     content: { type: String },
-     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } // Reference to the User model
-   });
+```js
+const PostSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  content: { type: String },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } // Reference to the User model
+});
 
-   const User = mongoose.model('User', UserSchema);
-   const Post = mongoose.model('Post', PostSchema);
-   ```
+const User = mongoose.model('User', UserSchema);
+const Post = mongoose.model('Post', PostSchema);
+```
 
-   ```sql
+```sql
    CREATE TABLE Posts (
      id INT AUTO_INCREMENT PRIMARY KEY,
      title VARCHAR(100) NOT NULL,
@@ -293,7 +291,7 @@
      user_id INT,
      FOREIGN KEY (user_id) REFERENCES Users(id)
    );
-   ```
+```
 ## Data Integrity and Constraints
 
 1. **NOT NULL**:
